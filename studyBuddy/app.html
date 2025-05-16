@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Study Buddy</title>
+</head>
+<body class="main-app">
+
+    <script>
+        if (localStorage.getItem("eingeloggt") !== "true") {
+          alert("Bitte logge dich erst ein.");
+          window.location.href = "index.html";
+        }
+      </script>
+      
+
+    <div class="header">
+        <h1>Study Buddy</h1>
+    </div>
+
+    <div class="offscreen-menu">
+        <ul>
+            <li><a href="#schedule">Zeitplan</a></li>
+            <li><a href="#goals">Lernziele</a></li>
+            <li><a href="#timer">Fokus-Timer</a></li>
+            <li>Profil soon...</li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </div>
+
+    <nav>
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="content">
+        <section id="schedule">
+            <h2>📅 Zeitplan</h2>
+            <button id="add-schedule-item">+</button>
+            <ul id="schedule-list">
+                
+            </ul>
+        </section>
+
+        <section id="goals">
+            <h2>🎯 Lernziele</h2>
+            <p>To-Do-Liste, Tagesziele oder Semesterziele.</p>
+            <button id="add-goal-item">+</button>
+            <ul id="goal-list">
+
+            </ul>
+        </section>
+
+        <section id="timer">
+            <h2>⏱ Fokus-Timer</h2>
+            <div id="timer-display">25:00</div>
+            <button onclick="startTimer()">Start</button>
+            <button onclick="stopTimer()">Stopp</button>
+            <button onclick="resetTimer()">Zurücksetzen</button>
+            <div>
+                <label for="time-input">Pomodoro Zeit (in Minuten):</label>
+                <input type="number" id="time-input" value="25" min="1" max="60">
+                <button onclick="setTime()">Einstellen</button>
+            </div>
+        </section>
+
+        <section id="groups">
+            <h2>👥 Gruppen</h2>
+            <button id="add-group">+</button>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+
+\geometry{a4paper, margin=2.5cm}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\title{%
+    Projektdokumentation Webtech2\\
+    \large 4.Semester\\
+    \vspace{0.5cm}
+    \textbf{Studdy Buddy}
+}
+
+\author{
+    Patrick Worm\\
+    Jan Kaltofen\\
+    Frederik Schomberg\\
+    \\
+    Hochschule Bochum-Informatik\\
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Einleitung}
+Jeder Student in der Welt soll einfach und bequem die Möglichkeit haben eine Lerngruppe zu finden, organisieren und sich auszutauschen. Egal ob vor Ort oder online!
+
+\section{Vision}
+Studdy Buddy unterstützt Lernende dabei, ihre Lernzeit zu planen, fokussiert zu bleiben und gemeinsam mit anderen Lernfortschritte zu erzielen. Alles an einem Ort.
+
+\section{Epic}
+\subsection{Lernorganisation optimieren}
+\textbf{Beschreibung:}\\
+Dieser Epic umfasst alle Funktionen, die Lernende beim strukturieren, Planen und Umsetzen ihrer Lernziele unterstützen.Individuell und in Gruppen.
+
+\section{Personas}
+
+\begin{itemize}
+  \item Vollzeitstudent: Ich bin viel an der Hochschule und möchte einen online Treffpunkt für meine Gruppe finden.
+  \item Arbeitnehmer während des Studiums: Ich habe wenig zeit und will Leute finden die an den selben tage zu den selben Zeiten bereit sind zu lernen.
+  \item Student aus einer anderen Stadt: Ich kenne in dieser Stadt niemand und muss Leute finden mit den ich lernen kann.
+\end{itemize}
+
+\section{User Stories}
+\subsection{Feature 1: Lerngruppen erstellen und verwalten}
+\textbf{User Story:}\\
+Als Vollzeitstudent möchte ich eine Lerngruppe erstellen können, damit ich mit anderen Studenten zusammenarbeiten kann.\\\\
+\textbf{Feature:}
+\begin{enumerate}
+    \item Gruppenlogik (Erstellen und Beitreten über code) in Backend und UI umsetzen.
+    \item Gruppenchat und gemeinsame Lernziele einführen.
+\end{enumerate}
+
+\subsection{Feature 2: Zeitplaner für Lernphasen}
+
+\textbf{User Story:}\\
+Als Nutzer*in möchte ich meinen Lernplan flexibel erstellen und anpassen können, damit ich gezielt auf Prüfungen oder Abgaben hinarbeiten kann.\\[1em]
+
+\textbf{Feature:}
+\begin{enumerate}
+  \item UI zur Erstellung und Verwaltung eines Lernkalenders mit drag-and-drop-Funktion.
+  \item Erinnerungsfunktion und Synchronisierung mit Kalenderdiensten.
+  \item Backend-Speicherung pro Nutzer mit Anpassbarkeit nach Kursen oder Themen.
+\end{enumerate}
+
+\subsection{Feature 3: Fokustimer mit Lernstatistik}
+
+\textbf{User Story:}\\
+Als Nutzer*in möchte ich einen Fokustimer nutzen können, um konzentriert in Intervallen zu lernen und meinen Fortschritt nachvollziehen zu können.\\[1em]
+
+\textbf{Feature:}
+\begin{enumerate}
+  \item Pomodoro-Timer mit konfigurierbaren Intervallen und automatischen Pausen.
+  \item Statistikseite mit Lernzeit pro Tag/Woche sowie Diagrammen.
+  \item Integration mit Benutzerprofil und Zielsetzung.
+\end{enumerate}
+
+\subsection{Feature 4: Lernziele setzen und verfolgen}
+
+\textbf{User Story:}\\
+Als Nutzer*in möchte ich Lernziele setzen und meinen Fortschritt sehen können, damit ich motiviert bleibe und mein Ziel im Blick habe.\\[1em]
+
+\textbf{Feature:}
+\begin{enumerate}
+  \item UI zum Anlegen, Bearbeiten und Abhaken von Lernzielen.
+  \item Visualisierung des Fortschritts mit Fortschrittsbalken.
+  \item Option zur Verknüpfung mit Lerngruppen (gemeinsame Ziele).
+\end{enumerate}
+
+\section{Funktionale Anforderungen}
+\begin{itemize}
+  \item Lerngruppen erstellen und verwalten.
+  \item Zeitplaner
+  \item Lernziele setzen
+  \item  Fokustimer
+  \item registrieren und einloggen.
+  \item Inhalte erstellen und bearbeiten.
+\end{itemize}
+
+\section{Technologien}
+\begin{itemize}
+  \item Frontend: HTML, CSS, JavaScript
+  \item Backend: 
+  \item Datenbank: 
+\end{itemize}
+
+\end{document}

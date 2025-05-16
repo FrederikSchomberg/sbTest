@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SB-Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #032b12;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: rgb(105, 196, 97);
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      background-color: #041f0d;
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 350px;
+    }
+
+    .form-container form {
+      display: none;
+      flex-direction: column;
+    }
+
+    .form-container form.active {
+      display: flex;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    input {
+      background-color: #f0f0f0;
+      color: #000;
+    }
+
+    button {
+      background-color: #00fc60;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #03b84e;
+    }
+
+    .switch-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .switch-buttons button {
+      width: 48%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Study Buddy</h1>
+
+  <div class="form-container">
+    <div class="switch-buttons">
+      <button onclick="showForm('loginForm')">Login</button>
+      <button onclick="showForm('registerForm')">Registrieren</button>
+    </div>
+
+    <!-- Login -->
+    <form id="loginForm" class="active" onsubmit="handleLogin(event)">
+      <input type="email" id="email" placeholder="E-Mail" required>
+      <input type="password" id="passwort" placeholder="Passwort" required>
+      <button type="submit">Einloggen</button>
+    </form>
+
+    <!-- Registrierung -->
+    <form id="registerForm" onsubmit="handleRegister(event)">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="E-Mail" required>
+      <input type="password" placeholder="Passwort" required>
+      <button type="submit">Registrieren</button>
+    </form>
+  </div>
+
+  <script>
+    function showForm(id) {
+      document.getElementById('loginForm').classList.remove('active');
+      document.getElementById('registerForm').classList.remove('active');
+      document.getElementById(id).classList.add('active');
+    }
+
+    const benutzerListe = [
+      { name: "admin", email: "admin@admin.com", passwort: "admin" },
+    ];
+
+    function handleLogin(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const passwort = document.getElementById("passwort").value;
+
+      const nutzer = benutzerListe.find(user =>
+        user.email === email && user.passwort === passwort
+      );
+
+      if (nutzer) {
+        alert("Willkommen, " + nutzer.name + "!");
+        localStorage.setItem("eingeloggt", "true"); // Login merken
+        window.location.href = "app.html";
+      } else {
+        alert("Falsche E-Mail oder Passwort.");
+      }
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      alert("Registrierung bald verfügbar.");
+    }
+  </script>
+</body>
+</html>
