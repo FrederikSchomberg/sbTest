@@ -1,0 +1,32 @@
+@startuml
+actor Client
+participant "Webserver (FastAPI)" as API
+participant "MockData" as Mock
+
+Client -> API: GET /users/
+activate API
+API -> Mock: Fetch all users
+activate Mock
+Mock --> API: [{id: 1, name: "John"}, ...]
+deactivate Mock
+API --> Client: 200 OK, [users JSON]
+deactivate API
+
+Client -> API: GET /users/1
+activate API
+API -> Mock: Lookup user_id=1
+activate Mock
+Mock --> API: User {id: 1, name: "John", ...}
+deactivate Mock
+API --> Client: 200 OK, {user JSON}
+deactivate API
+
+Client -> API: GET /users/999
+activate API
+API -> Mock: Lookup user_id=999
+activate Mock
+Mock --> API: null
+deactivate Mock
+API --> Client: 404 Not Found, {"detail": "User not found"}
+deactivate API
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+actor Client
+participant "Webserver (FastAPI)" as API
+participant "MockData" as Mock
+
+Client -> API: POST /study_groups/, {name: "Math Study Group", ...}
+activate API
+API -> Mock: Store new study group
+activate Mock
+Mock --> API: Group {id: 1, name: "Math Study Group", ...}
+deactivate Mock
+API --> Client: 201 Created, {group JSON}
+deactivate API
+@enduml

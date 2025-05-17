@@ -1,0 +1,87 @@
+{
+  "root": {
+    "request": {
+      "method": "GET",
+      "url": "/"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Welcome to StudyBuddy"
+      }
+    }
+  },
+  "get_users": {
+    "request": {
+      "method": "GET",
+      "url": "/users/"
+    },
+    "response": {
+      "status": 200,
+      "body": [
+        {
+          "id": 1,
+          "name": "John Doe",
+          "email": "john@example.com",
+          "created_at": "2025-05-16T19:55:00Z"
+        },
+        {
+          "id": 2,
+          "name": "Jane Smith",
+          "email": "jane@example.com",
+          "created_at": "2025-05-16T19:55:00Z"
+        },
+        {
+          "id": 3,
+          "name": "Alice Johnson",
+          "email": "alice@example.com",
+          "created_at": "2025-05-16T19:55:00Z"
+        }
+      ]
+    }
+  },
+  "get_user_by_id": {
+    "request": {
+      "method": "GET",
+      "url": "/users/1"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john@example.com",
+        "created_at": "2025-05-16T19:55:00Z"
+      }
+    },
+    "error_response": {
+      "status": 404,
+      "body": {
+        "detail": "User not found"
+      }
+    }
+  },
+  "create_study_group": {
+    "request": {
+      "method": "POST",
+      "url": "/study_groups/",
+      "body": {
+        "name": "Math Study Group",
+        "description": "Group for math enthusiasts",
+        "creator_id": 1,
+        "tags": ["math", "study"]
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "id": 1,
+        "name": "Math Study Group",
+        "description": "Group for math enthusiasts",
+        "creator_id": 1,
+        "tags": ["math", "study"],
+        "created_at": "2025-05-16T19:55:00Z"
+      }
+    }
+  }
+}

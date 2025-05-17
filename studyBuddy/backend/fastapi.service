@@ -1,0 +1,12 @@
+[Unit]
+Description=Study Buddy FastAPI Service
+After=network.target
+
+[Service]
+User=kali
+WorkingDirectory=/home/kali/arbeitsordner/sbTest/studyBuddy/backend/
+ExecStart=/home/kali/arbeitsordner/sbTest/studyBuddy/backend/start_fastapi.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
